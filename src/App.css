@@ -1,38 +1,204 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+ {
+  font-family: "PT Sans", sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: #f4f5f9;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  border: 1px solid #e2e5eb;
+  border-top: none;
+  border-bottom: none; 
+  display: flex;
+  height: 100vh;
+  align-items: flex-start;
+  position: relative;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border-top: 1px solid #e2e5eb;
+}
+.wrapper:after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  border-left: 1px solid #e2e5eb;
+}
+h1 {
+  font-size: 56px;
+  color: #42567A;
+  padding-left: 50px;
+  position: relative;
+  line-height: 1;
+  position: absolute;
+  top: 100px;
+  left: 0;
+}
+h1:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#de66a5, #996bc0, #5274e0);
+  width: 2px;
+  height: 120px;
+}
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.category-label {
+  font-size: 20px;
+  margin-bottom: 10px;
+  position: absolute;
+  top: calc(50% - 125px);
+  left: calc(50% + 230px);
+}
+
+.circle-container {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  transform: scale(1.5);
+  transform-origin: 50% 50%;
+  z-index: 20;
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #303E5880;
+  border-radius: 50%;
+  position: relative;
+}
+
+.circle-point {
+  position: absolute;
+  z-index: 20;
+  top: calc(50% - 3px);
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #42567A;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transform-origin: center;
+  font-size: 0;
+
+}
+
+.circle-point.active {
+  font-size: 14px;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+}
+
+.point-number-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+}
+
+.point-number {
+  font-size: 0.8em;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.year-counter {
+  font-size: 200px;
+  text-align: center;
+  top: calc(50% - 120px);
+  left: 0;
+  width: 100%;
+  position: absolute;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.year-counter span {
+  margin: 0 30px;
+  font-weight: 700;
+  position: relative;
+  z-index: 100;
+  height: 100px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.slide-description {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.swiper1 {
+  width: 100%;
+  margin: 20px auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.swiper2 .swiper-button-prev {
+  display: none;
+}
+.swiper-button-prev, .swiper-button-next {
+  background: url(./arrow.png) no-repeat 50% 50%;
+  background-size: 9px auto;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #42567A80;
+  border-radius: 50%;
+}
+.swiper-button-next {
+  transform: rotate(180deg);
+}
+.swiper-button-prev:after, .swiper-button-next:after {
+  opacity: 0;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.swiper-slide.swiper-slide-active,
+.swiper-slide.swiper-slide-next {
+  opacity: 1;
+  z-index: 1; /* Ensure active slide is above others */
+}
+
+/* Styles for fade effect */
+.swiper-fade .swiper-slide {
+  pointer-events: none;
+  transition-property: opacity;
+}
+
+.swiper-fade .swiper-slide .swiper-slide-active {
+  pointer-events: auto;
 }
