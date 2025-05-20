@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import { Swiper as SwiperClass } from 'swiper';
+import { useMediaQuery } from 'react-responsive';
 import 'swiper/swiper-bundle.css';
 import './App.css';
 import gsap from 'gsap';
@@ -54,24 +55,28 @@ const AnimatedNumber = ({ number, animationKey, color }: AnimatedNumberProps) =>
 };
 
 // --- Timeline Component ---
-const Timeline = ({ descriptions }: { descriptions: { year: number; text: string }[] }) => (
-  <Swiper
-    spaceBetween={50}
-    slidesPerView={3}
-    navigation
-    pagination={{ clickable: true }}
-    modules={[Navigation, Pagination, A11y]}
-    loop={true}
-    speed={500}
-  >
-    {descriptions.map((slide, index) => (
-      <SwiperSlide key={index}>
-        <div className="year">{slide.year}</div>
-        <div className="description">{slide.text}</div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
-);
+const Timeline = ({ descriptions }: { descriptions: { year: number; text: string }[] }) => {
+  const isMobile = useMediaQuery({ maxWidth: 1024 });
+  const slidesPerView = isMobile ? 1 : 3;
+  return (
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={slidesPerView}
+      navigation
+      pagination={{ clickable: true }}
+      modules={[Navigation, Pagination, A11y]}
+      loop={true}
+      speed={500}
+    >
+      {descriptions.map((slide, index) => (
+        <SwiperSlide key={index}>
+          <div className="year">{slide.year}</div>
+          <div className="text">{slide.text}</div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+};
 
 function App() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);

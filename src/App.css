@@ -188,9 +188,10 @@ h1:before {
   padding: 70px 0 15px;
   font-family: "Bebas Neue", sans-serif;
 }
-.description {
+.text {
   color: #42567A;
   max-width: 310px;
+  padding-bottom: 20px;
 }
 .swiper1 {
   width: calc(100% - 30px);
@@ -215,4 +216,41 @@ h1:before {
 }
 .swiper .swiper .swiper-button-prev {
   display: none;
+}
+@media(max-width: 1024px) {
+  .wrapper {
+    border: none;
+  }
+  h1:before, .wrapper:after, .wrapper:before, .circle-container, 
+  .swiper .swiper .swiper-button-next {
+    display: none;
+  }
+  .swiper .swiper .swiper-pagination {
+    display: block;
+  }
+  h1 {
+    padding-left: 0;
+    top: 50px;
+    font-size: 20px;
+  }
+  .year-counter {
+    font-size: 56px;
+    top: 30%;
+  }
+  .year-counter span {
+    margin: 0 10px;
+  }
+  .swiper-button-prev, .swiper-button-next {
+    width: 25px;
+    height: 25px;
+  }
+  .swiper1 {
+    left: 0;
+  }
+  .text {
+    max-width: 100%;
+  }
+  .swiper1>.swiper-button-next {
+    left: 35px;
+  }
 }
