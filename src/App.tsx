@@ -81,9 +81,20 @@ function App() {
   const indicatorRef = useRef<HTMLDivElement>(null);
 
     const slides: SlideData[] = useMemo(() => [
-    { startYear: 1992, endYear: 1997, category: 'Литература', description: [{ year: 2015, text: 'Description 1' }, { year: 2016, text: 'Description 2' }] },
-    { startYear: 1999, endYear: 2004, category: 'Балет', description: [{ year: 2017, text: 'Description 3' }, { year: 2018, text: 'Description 4' }] },
-    { startYear: 1988, endYear: 1992, category: 'Кино', description: [{ year: 2019, text: 'Description 5' }, { year: 2020, text: 'Description 6' }] },
+    { startYear: 2016, endYear: 2017, category: 'Литература', description: 
+      [{ year: 2015, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' }, 
+      { year: 2016, text: 'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11' },
+      { year: 2017, text: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi' },
+      { year: 2018, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' } 
+    ] },
+    { startYear: 2018, endYear: 2020, category: 'Балет', description: [{ year: 2018, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' }, 
+      { year: 2019, text: 'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11' },
+      { year: 2020, text: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi' } 
+    ] },
+    { startYear: 2021, endYear: 2024, category: 'Кино', description: [{ year: 2021, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' }, 
+      { year: 2022, text: 'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11' },
+      { year: 2024, text: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi' } 
+    ] },
     { startYear: 1987, endYear: 1991, category: 'Кино', description: [{ year: 2021, text: 'Description 7' }, { year: 2022, text: 'Description 8' }] },
     { startYear: 2010, endYear: 2015, category: 'Технологии', description: [{ year: 2023, text: 'Description 9' }, { year: 2024, text: 'Description 10' }] },
     { startYear: 2015, endYear: 2022, category: 'Наука', description: [{ year: 2025, text: 'Description 11' }, { year: 2026, text: 'Description 12' }] },
