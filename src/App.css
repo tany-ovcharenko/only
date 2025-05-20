@@ -222,7 +222,7 @@ h1:before {
     border: none;
   }
   h1:before, .wrapper:after, .wrapper:before, .circle-container, 
-  .swiper .swiper .swiper-button-next {
+  .swiper .swiper .swiper-button-next, .category-label {
     display: none;
   }
   .swiper .swiper .swiper-pagination {
