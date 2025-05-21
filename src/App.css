@@ -236,6 +236,7 @@ h1:before {
 }
 .swiper .swiper {
   margin-right: 20px;
+  z-index: 100;
 }
 .swiper .swiper .swiper-button-prev {
   display: none;
@@ -288,12 +289,13 @@ h1:before {
     }
     .swiper .swiper {
       min-width: 450px;
+      background: #f4f5f9;
     }
 
-    .swiper .swiper .swiper-slide {
+    .swiper .swiper .swiper-slide * {
       opacity: 0.5;
     }
-    .swiper .swiper .swiper-slide-active {
+    .swiper .swiper .swiper-slide-active * {
       opacity: 1;
     }
 
