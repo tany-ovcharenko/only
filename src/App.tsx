@@ -57,7 +57,7 @@ const AnimatedNumber = ({ number, animationKey, color }: AnimatedNumberProps) =>
 // --- Timeline Component ---
 const Timeline = ({ descriptions }: { descriptions: { year: number; text: string }[] }) => {
   const isMobile = useMediaQuery({ maxWidth: 1024 });
-  const slidesPerView = isMobile ? 1 : 3;
+  const slidesPerView = isMobile ? 2 : 3;
   return (
     <Swiper
       spaceBetween={50}

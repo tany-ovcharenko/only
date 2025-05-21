@@ -252,6 +252,7 @@ h1:before {
   .swiper .swiper .swiper-pagination {
     display: block;
     z-index: 2000;
+    max-width: 350px;
   }
   h1 {
     padding-left: 0;
@@ -261,6 +262,7 @@ h1:before {
   .year-counter {
     font-size: 56px;
     top: 30%;
+    border-bottom: 1px solid #ccc;
   }
   .year-counter span {
     margin: 0 10px;
@@ -282,8 +284,19 @@ h1:before {
     background: none;
   }
   .swiper1>.swiper-button-next, .swiper1>.swiper-button-prev {
-    top: 388px;
-}
+    top: 428px;
+    }
+    .swiper .swiper {
+      min-width: 450px;
+    }
+
+    .swiper .swiper .swiper-slide {
+      opacity: 0.5;
+    }
+    .swiper .swiper .swiper-slide-active {
+      opacity: 1;
+    }
+
   .text {
     padding-bottom: 200px;
   }
