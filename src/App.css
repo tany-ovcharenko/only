@@ -36,6 +36,7 @@ body {
   position: absolute;
   left: 50%;
   top: 0;
+  z-index: 20;
   border-left: 1px solid #e2e5eb;
 }
 h1 {
@@ -168,6 +169,7 @@ h1:before {
 .swiper2 .swiper-button-prev {
   display: none;
 }
+
 .swiper-button-prev, .swiper-button-next {
   background: url(./arrow.png) no-repeat 50% 50%;
   background-size: 9px auto;
@@ -175,6 +177,12 @@ h1:before {
   height: 50px;
   border: 1px solid #42567A80;
   border-radius: 50%;
+  z-index: 2000;
+}
+.swiper .swiper .swiper-button-next {
+  background-color: #fff;
+  box-shadow: 1px 1px 10px #3877EE1A;
+  border: none;
 }
 .swiper-button-next {
   transform: rotate(180deg);
@@ -187,12 +195,21 @@ h1:before {
   color: #3877EE;
   font-size: 25px;
   padding: 70px 0 15px;
+  background: #f4f5f9;
   font-family: "Bebas Neue", sans-serif;
+  max-width: 300px;
+}
+.swiper-fade .swiper-slide-active .swiper-slide-active {
+  background: #f4f5f9;
+}
+.digit {
+  background: #f4f5f9;
 }
 .text {
   color: #42567A;
   max-width: 310px;
   padding-bottom: 20px;
+  background: #f4f5f9;
 }
 .swiper1 {
   width: calc(100% - 30px);

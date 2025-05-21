@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, A11y } from 'swiper/modules';
+import { Navigation, Pagination, A11y, EffectFade } from 'swiper/modules';
 import { Swiper as SwiperClass } from 'swiper';
 import { useMediaQuery } from 'react-responsive';
 import 'swiper/swiper-bundle.css';
@@ -27,7 +27,7 @@ const AnimatedNumber = ({ number, animationKey, color }: AnimatedNumberProps) =>
 
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
-    const animationDuration = 100;
+    const animationDuration = 150;
     const frameDuration = 30;
     const totalFrames = animationDuration / frameDuration;
     let currentFrame = 0;
@@ -92,23 +92,23 @@ function App() {
       { year: 2017, text: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi' },
       { year: 2018, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' } 
     ] },
-    { startYear: 2018, endYear: 2020, category: 'Балет', description: [{ year: 2018, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' }, 
-      { year: 2019, text: 'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11' },
+    { startYear: 2018, endYear: 2020, category: 'Балет', description: [{ year: 2018, text: 'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11' }, 
+      { year: 2019, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' },
       { year: 2020, text: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi' } 
     ] },
     { startYear: 2021, endYear: 2024, category: 'Кино', description: [{ year: 2021, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' }, 
       { year: 2022, text: 'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11' },
-      { year: 2024, text: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi' } 
+      { year: 2024, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' } 
     ] },
-    { startYear: 1987, endYear: 1991, category: 'Кино', description: [{ year: 2021, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' }, 
+    { startYear: 1987, endYear: 1991, category: 'Кино', description: [{ year: 2021, text: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi' }, 
       { year: 2022, text: 'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11' },
       { year: 2024, text: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi' } 
     ] },
     { startYear: 2010, endYear: 2015, category: 'Технологии', description: [{ year: 2021, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' }, 
       { year: 2022, text: 'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11' },
-      { year: 2024, text: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi' } 
+      { year: 2024, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' } 
     ] },
-    { startYear: 2015, endYear: 2022, category: 'Наука', description: [{ year: 2021, text: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды' }, 
+    { startYear: 2015, endYear: 2022, category: 'Наука', description: [{ year: 2021, text: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi' }, 
       { year: 2022, text: 'Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11' },
       { year: 2024, text: 'Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi' } 
     ] },
@@ -204,16 +204,17 @@ function App() {
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
-          modules={[Navigation, Pagination, A11y]}
+          modules={[Navigation, Pagination, A11y, EffectFade]}
           loop={true}
           className="swiper1"
           onSlideChange={handleSlideChange}
           onSwiper={handleSwiper}
           speed={500}
+          effect={'fade'}
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-             0{index +1}/0{slides.length}
+             <span className="digit">0{index +1}/0{slides.length}</span>
               <Timeline descriptions={slide.description} />
             </SwiperSlide>
           ))}
