@@ -8,6 +8,7 @@ body {
 }
 .wrapper {
   max-width: 1440px;
+  min-height: 800px;
   margin: 0 auto;
   border: 1px solid #e2e5eb;
   border-top: none;
@@ -220,6 +221,7 @@ h1:before {
 @media(max-width: 1024px) {
   .wrapper {
     border: none;
+    min-height: 100%;
   }
   h1:before, .wrapper:after, .wrapper:before, .circle-container, 
   .swiper .swiper .swiper-button-next, .category-label {
