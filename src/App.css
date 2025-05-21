@@ -17,6 +17,7 @@ body {
   height: 100vh;
   align-items: flex-start;
   position: relative;
+  overflow: hidden;
 }
 .wrapper:before {
   content: "";
@@ -166,6 +167,10 @@ h1:before {
   bottom: 0;
   left: 0;
 }
+.swiper-wrapper {
+  z-index: 100;
+  background: #f4f5f9;
+}
 .swiper2 .swiper-button-prev {
   display: none;
 }
@@ -246,6 +251,7 @@ h1:before {
   }
   .swiper .swiper .swiper-pagination {
     display: block;
+    z-index: 2000;
   }
   h1 {
     padding-left: 0;
@@ -271,5 +277,19 @@ h1:before {
   }
   .swiper1>.swiper-button-next {
     left: 35px;
+  }
+  .swiper-wrapper {
+    background: none;
+  }
+  .swiper1>.swiper-button-next, .swiper1>.swiper-button-prev {
+    top: 388px;
+}
+  .text {
+    padding-bottom: 200px;
+  }
+  .digit {
+    position: absolute;
+    bottom: 50px;
+    z-index: 2000;
   }
 }
