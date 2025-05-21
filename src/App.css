@@ -241,6 +241,10 @@ h1:before {
 .swiper .swiper .swiper-button-prev {
   display: none;
 }
+.swiper .swiper {
+  min-width: 450px;
+  background: #f4f5f9;
+}
 @media(max-width: 1024px) {
   .wrapper {
     border: none;
@@ -287,10 +291,7 @@ h1:before {
   .swiper1>.swiper-button-next, .swiper1>.swiper-button-prev {
     top: 428px;
     }
-    .swiper .swiper {
-      min-width: 450px;
-      background: #f4f5f9;
-    }
+
 
     .swiper .swiper .swiper-slide * {
       opacity: 0.5;
