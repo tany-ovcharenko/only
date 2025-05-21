@@ -161,12 +161,12 @@ function App() {
             style={{}}
           >
             {slides.map((slide, index) => {
-              const rotationAngle = index * angleIncrement;
+              const rotationAngle = (index + 1) * angleIncrement;
 
               const x = circleRadius * Math.cos((rotationAngle - 90) * Math.PI / 180);
               const y = circleRadius * Math.sin((rotationAngle - 90) * Math.PI / 180);
 
-              const isActive = currentSlideIndex + 1 === index;
+              const isActive = currentSlideIndex === index;
 
               return (
                 <div
