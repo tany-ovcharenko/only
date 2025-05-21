@@ -200,12 +200,12 @@ h1:before {
 }
 .swiper1>.swiper-button-prev {
   position: absolute;
-  top: 25px;
+  top: 45px;
   left: 0;
 }
 .swiper1>.swiper-button-next {
   position: absolute;
-  top: 25px;
+  top: 45px;
   left: 70px;
 }
 .swiper-pagination {
