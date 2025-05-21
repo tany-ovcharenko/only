@@ -27,8 +27,8 @@ const AnimatedNumber = ({ number, animationKey, color }: AnimatedNumberProps) =>
 
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
-    const animationDuration = 500;
-    const frameDuration = 10;
+    const animationDuration = 100;
+    const frameDuration = 30;
     const totalFrames = animationDuration / frameDuration;
     let currentFrame = 0;
 
