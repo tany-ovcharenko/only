@@ -213,7 +213,7 @@ function App() {
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-             0 {index +1}/0 {slides.length}
+             0{index +1}/0{slides.length}
               <Timeline descriptions={slide.description} />
             </SwiperSlide>
           ))}
